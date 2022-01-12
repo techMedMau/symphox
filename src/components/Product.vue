@@ -36,11 +36,6 @@ export default {
       default: false,
     }
 
-  },
-  data(){
-    return{
-
-    }
   }
 }
 </script>
@@ -48,6 +43,9 @@ export default {
 <style lang="scss">
 
 .product{
+  &+&, &+.listBlock{
+    border-top: 2px solid #E5E5E5;
+  }
   display: flex;
   width: 100%;
   height: 190px;
@@ -55,10 +53,8 @@ export default {
   padding: 33px;
   &_info{
     margin-right: 15px;
-    // position: relative;
     width: 395px;
     &_date{
-      // position: absolute;
       top:20px;
       right: 10px;
       font-size: 25px;

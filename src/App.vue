@@ -1,6 +1,12 @@
 <template>
   <div id="app" class="container">
+    <div class="listBlock">
+      <p class="listBlock_status">進行中</p>
+    </div>
     <Product v-for="(item,index) in dealingList" :key="'dealing'+index" :item="item"/>
+    <div class="listBlock">
+       <p class="listBlock_status">已完成</p>
+    </div>
     <Product v-for="(item,index) in completeList" :key="'complete'+index" :item="item" :isComplete="true"/>
   </div>
 </template>
@@ -68,8 +74,6 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // text-align: center;
-  // color: #2c3e50;
   box-sizing: border-box;
 }
 
@@ -80,5 +84,17 @@ p{
 .container{
   width: 650px;
   margin: 0 auto;
+  border: 2px solid #E5E5E5;
+}
+
+.listBlock{
+  padding: 20px 33px;
+  background-color: #F5F5F5;
+  border-bottom: 2px solid #E5E5E5;
+  &_status{
+    border-left: 7px solid #64AD48;
+    text-indent: 1rem;
+    font-size: 26px;
+  }
 }
 </style>
