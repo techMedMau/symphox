@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <Product v-for="(item,index) in dealingList" :key="'dealing'+index" :item="item"/>
-    <Product v-for="(item,index) in completeList" :key="'complete'+index" :item="item"/>
+    <Product v-for="(item,index) in completeList" :key="'complete'+index" :item="item" :isComplete="true"/>
   </div>
 </template>
 
@@ -63,13 +63,22 @@ export default {
 }
 </script>
 
-<style>
-#app {
+<style lang="scss">
+* {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  // text-align: center;
+  // color: #2c3e50;
+  box-sizing: border-box;
+}
+
+p{
+  margin: 0;
+}
+
+.container{
+  width: 650px;
+  margin: 0 auto;
 }
 </style>
