@@ -11,11 +11,14 @@
     </div>
     <div class="product_info">
       <div class="flex-between">
-        <p class="product_info_status">{{item.status.type}}</p>
-        <time class="product_info_date">預計出貨：{{item.date}}</time>
+        <p class="product_info_status" :style="{color: isComplete? 'black':'#64AD48'}">{{item.status.type}}</p>
+        <time v-if="!isComplete" class="product_info_date">預計出貨：{{item.date}}</time>
       </div>
       <p class="product_info_name">{{item.name}}</p>
     </div>
+    <span class="material-icons" style="color: rgb(108, 108, 108);">
+arrow_forward_ios
+</span>
   </div>
 </template>
 
@@ -51,7 +54,7 @@ export default {
   align-items: center;
   padding: 33px;
   &_info{
-    margin-left: 25px;
+    margin-right: 15px;
     // position: relative;
     width: 395px;
     &_date{
@@ -61,7 +64,6 @@ export default {
       font-size: 25px;
     }
     &_status{
-      color: #64AD48;
       font-size: 25px;
     }
     &_name{
@@ -77,6 +79,7 @@ export default {
 .img{
   &_inner{
     width: 100px;
+    margin-right: 33px;
   }
   &_resp{
     width: 100px;
